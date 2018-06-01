@@ -2,7 +2,8 @@
   "name": "polymer-lottie",
   "main": "polymer-lottie.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^2.0.0"
+    "polymer": "Polymer/polymer#^2.0.0",
+    "bodymovin": "^5.1.15"
   },
   "devDependencies": {
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",

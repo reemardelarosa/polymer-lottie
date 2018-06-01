@@ -1,10 +1,13 @@
 <link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../bodymovin/build//player/lottie.js">
 
 <dom-module id="polymer-lottie">
   <template>
     <style>
       :host {
-        display: block;
+        display: inline-block;
+        overflow: hidden;
+        margin: 0 auto;
       }
     </style>
     <h2>Hello [[prop1]]!</h2>
@@ -20,14 +23,62 @@
      * @demo demo/index.html
      */
     class PolymerLottie extends Polymer.Element {
+
       static get is() { return 'polymer-lottie'; }
+
       static get properties() {
         return {
-          prop1: {
+          animationData: {
+            type: Object
+          },
+          autoPlay: {
+            type: Boolean,
+            value: false
+          },
+          container: {
+            type: Object
+          },
+          loop: {
+            type: Boolean,
+            value: false
+          },
+          loading: {
+            type: Boolean,
+            value: false
+          },
+          loaded: {
+            type: Boolean,
+            value: false
+          },
+          renderer: {
             type: String,
-            value: 'polymer-lottie'
+            value: 'svg'
+          },
+          rendererSettings: {
+            type: Object,
+            value: {}
           }
         };
+      }
+
+      ready() {
+        super.ready();
+
+        this._initializeLottie();
+      }
+
+      _initializeLottie() {
+        let options = {
+          container: this.nativeElement,
+          renderer: this.renderer,
+          loop: this.loop,
+          autoplay: this.autoplay,
+          animationData: this.animationData,
+          path: this.path,
+          rendererSettings: this.rendererSettings
+        };
+
+        lottie.loadAnimation(options);
       }
     }
 
