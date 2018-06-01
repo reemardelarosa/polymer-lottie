@@ -6,10 +6,10 @@
 
     <title>polymer-lottie test</title>
 
-    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script src="../node_modules/wct-browser-legacy/browser.js"></script>
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
 
-    <script type="module" src="../polymer-lottie.js"></script>
+    <link rel="import" href="../polymer-lottie.html">
   </head>
   <body>
 
@@ -25,7 +25,7 @@
       </template>
     </test-fixture>
 
-    <script type="module">
+    <script>
       suite('polymer-lottie', () => {
 
         test('instantiating the element with default properties works', () => {

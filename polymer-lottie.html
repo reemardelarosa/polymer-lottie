@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="polymer-lottie">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `polymer-lottie`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class PolymerLottie extends Polymer.Element {
+      static get is() { return 'polymer-lottie'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'polymer-lottie'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(PolymerLottie.is, PolymerLottie);
+  </script>
+</dom-module>
